@@ -1,0 +1,10 @@
+{
+  "model_name": "Log-target Extra Trees",
+  "candidate_name": "Extra Trees",
+  "selection_metric_priority": [
+    "test MAE (primary)",
+    "test RMSE (tie-break)",
+    "test R\u00b2 (tie-break)"
+  ],
+  "updated_at": "2026-10-12T10:06:35.632951+00:00"
+}

@@ -1,0 +1,3597 @@
+{
+  "generated_at": "2026-10-12T10:06:35.633950+00:00",
+  "model_name": "Extra Trees",
+  "production_model_name": "Log-target Extra Trees",
+  "candidate_winner": "Gradient Boosting",
+  "selection_metric_priority": [
+    "test MAE (primary)",
+    "test RMSE (tie-break)",
+    "test R² (tie-break)"
+  ],
+  "model_updated": false,
+  "selection_note": "Production priority: lowest shared-holdout MAE; RMSE and then R² break ties. A challenger must improve MAE by at least 5% without worsening RMSE by more than 5%. Since the holdout selects the candidate, these scores are exploratory, not an untouched final test.",
+  "split": {
+    "test_size": 0.2,
+    "random_state": 42,
+    "train_rows": 2861,
+    "test_rows": 716,
+    "matches_notebook_10": true
+  },
+  "models": {
+    "Extra Trees": {
+      "training": {
+        "mae": 98163.48,
+        "rmse": 240372.44,
+        "r2": 0.7628
+      },
+      "test": {
+        "mae": 165636.21,
+        "rmse": 421322.39,
+        "r2": 0.4489
+      },
+      "price_ranges": [
+        {
+          "range": "Under ₹1 lakh",
+          "count": 64,
+          "mae": 37130.31,
+          "mean_actual_minus_predicted": -32142.08,
+          "underprediction_rate": 0.2344
+        },
+        {
+          "range": "₹1–3 lakh",
+          "count": 254,
+          "mae": 76676.15,
+          "mean_actual_minus_predicted": -39375.73,
+          "underprediction_rate": 0.3661
+        },
+        {
+          "range": "₹3–5 lakh",
+          "count": 170,
+          "mae": 108871.01,
+          "mean_actual_minus_predicted": -11902.81,
+          "underprediction_rate": 0.5059
+        },
+        {
+          "range": "₹5–10 lakh",
+          "count": 178,
+          "mae": 194024.36,
+          "mean_actual_minus_predicted": 60012.9,
+          "underprediction_rate": 0.6966
+        },
+        {
+          "range": "Over ₹10 lakh",
+          "count": 50,
+          "mae": 873980.68,
+          "mean_actual_minus_predicted": 606376.69,
+          "underprediction_rate": 0.8
+        }
+      ],
+      "residual_diagnostics": {
+        "mean_actual_minus_predicted": 37596.54,
+        "median_actual_minus_predicted": 73.04,
+        "underprediction_rate": 0.5
+      }
+    },
+    "Random Forest": {
+      "training": {
+        "mae": 108170.92,
+        "rmse": 224309.11,
+        "r2": 0.7934
+      },
+      "test": {
+        "mae": 174156.83,
+        "rmse": 404521.21,
+        "r2": 0.492
+      },
+      "price_ranges": [
+        {
+          "range": "Under ₹1 lakh",
+          "count": 64,
+          "mae": 46989.39,
+          "mean_actual_minus_predicted": -44345.28,
+          "underprediction_rate": 0.0625
+        },
+        {
+          "range": "₹1–3 lakh",
+          "count": 254,
+          "mae": 96546.81,
+          "mean_actual_minus_predicted": -67826.23,
+          "underprediction_rate": 0.2835
+        },
+        {
+          "range": "₹3–5 lakh",
+          "count": 170,
+          "mae": 124103.91,
+          "mean_actual_minus_predicted": -43137.27,
+          "underprediction_rate": 0.4118
+        },
+        {
+          "range": "₹5–10 lakh",
+          "count": 178,
+          "mae": 202858.63,
+          "mean_actual_minus_predicted": 19594.48,
+          "underprediction_rate": 0.6067
+        },
+        {
+          "range": "Over ₹10 lakh",
+          "count": 50,
+          "mae": 799191.62,
+          "mean_actual_minus_predicted": 524771.26,
+          "underprediction_rate": 0.78
+        }
+      ],
+      "residual_diagnostics": {
+        "mean_actual_minus_predicted": 3250.12,
+        "median_actual_minus_predicted": -21628.45,
+        "underprediction_rate": 0.4092
+      }
+    },
+    "Gradient Boosting": {
+      "training": {
+        "mae": 150723.69,
+        "rmse": 333153.33,
+        "r2": 0.5443
+      },
+      "test": {
+        "mae": 164913.65,
+        "rmse": 420107.1,
+        "r2": 0.4521
+      },
+      "price_ranges": [
+        {
+          "range": "Under ₹1 lakh",
+          "count": 64,
+          "mae": 61531.15,
+          "mean_actual_minus_predicted": -61531.15,
+          "underprediction_rate": 0.0
+        },
+        {
+          "range": "₹1–3 lakh",
+          "count": 254,
+          "mae": 91960.97,
+          "mean_actual_minus_predicted": -66190.15,
+          "underprediction_rate": 0.248
+        },
+        {
+          "range": "₹3–5 lakh",
+          "count": 170,
+          "mae": 102081.24,
+          "mean_actual_minus_predicted": -20306.99,
+          "underprediction_rate": 0.4412
+        },
+        {
+          "range": "₹5–10 lakh",
+          "count": 178,
+          "mae": 174226.17,
+          "mean_actual_minus_predicted": 84031.58,
+          "underprediction_rate": 0.7416
+        },
+        {
+          "range": "Over ₹10 lakh",
+          "count": 50,
+          "mae": 848320.51,
+          "mean_actual_minus_predicted": 806473.46,
+          "underprediction_rate": 0.9
+        }
+      ],
+      "residual_diagnostics": {
+        "mean_actual_minus_predicted": 43406.17,
+        "median_actual_minus_predicted": -15414.16,
+        "underprediction_rate": 0.4399
+      }
+    }
+  },
+  "price_range_metrics": [
+    {
+      "range": "Under ₹1 lakh",
+      "count": 64,
+      "mae": 37130.31,
+      "mean_actual_minus_predicted": -32142.08,
+      "underprediction_rate": 0.2344
+    },
+    {
+      "range": "₹1–3 lakh",
+      "count": 254,
+      "mae": 76676.15,
+      "mean_actual_minus_predicted": -39375.73,
+      "underprediction_rate": 0.3661
+    },
+    {
+      "range": "₹3–5 lakh",
+      "count": 170,
+      "mae": 108871.01,
+      "mean_actual_minus_predicted": -11902.81,
+      "underprediction_rate": 0.5059
+    },
+    {
+      "range": "₹5–10 lakh",
+      "count": 178,
+      "mae": 194024.36,
+      "mean_actual_minus_predicted": 60012.9,
+      "underprediction_rate": 0.6966
+    },
+    {
+      "range": "Over ₹10 lakh",
+      "count": 50,
+      "mae": 873980.68,
+      "mean_actual_minus_predicted": 606376.69,
+      "underprediction_rate": 0.8
+    }
+  ],
+  "feature_importance": [
+    {
+      "feature": "numeric__year",
+      "importance": 0.489162
+    },
+    {
+      "feature": "categorical__fuel_Diesel",
+      "importance": 0.147232
+    },
+    {
+      "feature": "categorical__transmission_Manual",
+      "importance": 0.063684
+    },
+    {
+      "feature": "categorical__transmission_Automatic",
+      "importance": 0.062101
+    },
+    {
+      "feature": "numeric__km_driven",
+      "importance": 0.045158
+    },
+    {
+      "feature": "categorical__owner_First Owner",
+      "importance": 0.040985
+    },
+    {
+      "feature": "categorical__seller_type_Individual",
+      "importance": 0.009371
+    },
+    {
+      "feature": "categorical__name_Maruti Alto 800 LXI",
+      "importance": 0.006311
+    },
+    {
+      "feature": "categorical__seller_type_Dealer",
+      "importance": 0.005021
+    },
+    {
+      "feature": "categorical__owner_Second Owner",
+      "importance": 0.004996
+    },
+    {
+      "feature": "categorical__name_Tata Indica DLS",
+      "importance": 0.004521
+    },
+    {
+      "feature": "categorical__fuel_Petrol",
+      "importance": 0.003981
+    }
+  ],
+  "actual_vs_predicted": [
+    {
+      "actual": 270000.0,
+      "predicted": 540871.78
+    },
+    {
+      "actual": 525000.0,
+      "predicted": 502208.48
+    },
+    {
+      "actual": 990000.0,
+      "predicted": 837153.78
+    },
+    {
+      "actual": 3800000.0,
+      "predicted": 1857869.34
+    },
+    {
+      "actual": 229999.0,
+      "predicted": 114890.02
+    },
+    {
+      "actual": 325000.0,
+      "predicted": 319383.36
+    },
+    {
+      "actual": 210000.0,
+      "predicted": 165906.15
+    },
+    {
+      "actual": 500000.0,
+      "predicted": 773569.3
+    },
+    {
+      "actual": 790000.0,
+      "predicted": 917747.26
+    },
+    {
+      "actual": 360000.0,
+      "predicted": 266786.7
+    },
+    {
+      "actual": 250000.0,
+      "predicted": 203574.99
+    },
+    {
+      "actual": 160000.0,
+      "predicted": 229804.06
+    },
+    {
+      "actual": 500000.0,
+      "predicted": 788770.74
+    },
+    {
+      "actual": 229999.0,
+      "predicted": 206315.76
+    },
+    {
+      "actual": 360000.0,
+      "predicted": 360253.23
+    },
+    {
+      "actual": 612000.0,
+      "predicted": 329179.51
+    },
+    {
+      "actual": 350000.0,
+      "predicted": 304409.58
+    },
+    {
+      "actual": 800000.0,
+      "predicted": 921525.29
+    },
+    {
+      "actual": 160000.0,
+      "predicted": 205990.85
+    },
+    {
+      "actual": 330000.0,
+      "predicted": 363824.79
+    },
+    {
+      "actual": 180000.0,
+      "predicted": 167038.75
+    },
+    {
+      "actual": 400000.0,
+      "predicted": 283295.07
+    },
+    {
+      "actual": 150000.0,
+      "predicted": 88432.71
+    },
+    {
+      "actual": 525000.0,
+      "predicted": 474770.1
+    },
+    {
+      "actual": 300000.0,
+      "predicted": 311737.57
+    },
+    {
+      "actual": 409999.0,
+      "predicted": 495085.64
+    },
+    {
+      "actual": 495000.0,
+      "predicted": 530346.94
+    },
+    {
+      "actual": 628000.0,
+      "predicted": 583311.77
+    },
+    {
+      "actual": 500000.0,
+      "predicted": 339041.71
+    },
+    {
+      "actual": 110000.0,
+      "predicted": 192069.07
+    },
+    {
+      "actual": 1050000.0,
+      "predicted": 561246.9
+    },
+    {
+      "actual": 100000.0,
+      "predicted": 162118.66
+    },
+    {
+      "actual": 75000.0,
+      "predicted": 96255.37
+    },
+    {
+      "actual": 509999.0,
+      "predicted": 655444.91
+    },
+    {
+      "actual": 290000.0,
+      "predicted": 239331.3
+    },
+    {
+      "actual": 114999.0,
+      "predicted": 154398.93
+    },
+    {
+      "actual": 350000.0,
+      "predicted": 259649.0
+    },
+    {
+      "actual": 650000.0,
+      "predicted": 244651.94
+    },
+    {
+      "actual": 800000.0,
+      "predicted": 352330.77
+    },
+    {
+      "actual": 1400000.0,
+      "predicted": 1350478.04
+    },
+    {
+      "actual": 738000.0,
+      "predicted": 746065.89
+    },
+    {
+      "actual": 170000.0,
+      "predicted": 243328.14
+    },
+    {
+      "actual": 600000.0,
+      "predicted": 678403.37
+    },
+    {
+      "actual": 400000.0,
+      "predicted": 605448.98
+    },
+    {
+      "actual": 650000.0,
+      "predicted": 421462.73
+    },
+    {
+      "actual": 265000.0,
+      "predicted": 243416.01
+    },
+    {
+      "actual": 150000.0,
+      "predicted": 211328.47
+    },
+    {
+      "actual": 350000.0,
+      "predicted": 309572.67
+    },
+    {
+      "actual": 320000.0,
+      "predicted": 118601.45
+    },
+    {
+      "actual": 500000.0,
+      "predicted": 467061.43
+    },
+    {
+      "actual": 229999.0,
+      "predicted": 288706.22
+    },
+    {
+      "actual": 500000.0,
+      "predicted": 434526.93
+    },
+    {
+      "actual": 700000.0,
+      "predicted": 635592.09
+    },
+    {
+      "actual": 300000.0,
+      "predicted": 221303.95
+    },
+    {
+      "actual": 430000.0,
+      "predicted": 212440.75
+    },
+    {
+      "actual": 425000.0,
+      "predicted": 645717.28
+    },
+    {
+      "actual": 250000.0,
+      "predicted": 342738.41
+    },
+    {
+      "actual": 281000.0,
+      "predicted": 502718.08
+    },
+    {
+      "actual": 315000.0,
+      "predicted": 375982.28
+    },
+    {
+      "actual": 350000.0,
+      "predicted": 359345.36
+    },
+    {
+      "actual": 260000.0,
+      "predicted": 333096.39
+    },
+    {
+      "actual": 150000.0,
+      "predicted": 217317.35
+    },
+    {
+      "actual": 75000.0,
+      "predicted": 94499.17
+    },
+    {
+      "actual": 120000.0,
+      "predicted": 148631.73
+    },
+    {
+      "actual": 635000.0,
+      "predicted": 402046.39
+    },
+    {
+      "actual": 385000.0,
+      "predicted": 365918.41
+    },
+    {
+      "actual": 380000.0,
+      "predicted": 193499.55
+    },
+    {
+      "actual": 1300000.0,
+      "predicted": 1543285.36
+    },
+    {
+      "actual": 320000.0,
+      "predicted": 518107.5
+    },
+    {
+      "actual": 270000.0,
+      "predicted": 228341.74
+    },
+    {
+      "actual": 1331000.0,
+      "predicted": 1171475.41
+    },
+    {
+      "actual": 300000.0,
+      "predicted": 238134.4
+    },
+    {
+      "actual": 260000.0,
+      "predicted": 254999.88
+    },
+    {
+      "actual": 200000.0,
+      "predicted": 300398.65
+    },
+    {
+      "actual": 200000.0,
+      "predicted": 525765.24
+    },
+    {
+      "actual": 750000.0,
+      "predicted": 652063.9
+    },
+    {
+      "actual": 150000.0,
+      "predicted": 191810.69
+    },
+    {
+      "actual": 428000.0,
+      "predicted": 400266.88
+    },
+    {
+      "actual": 175000.0,
+      "predicted": 103165.32
+    },
+    {
+      "actual": 43000.0,
+      "predicted": 51000.26
+    },
+    {
+      "actual": 610000.0,
+      "predicted": 759872.58
+    },
+    {
+      "actual": 305000.0,
+      "predicted": 210721.83
+    },
+    {
+      "actual": 225000.0,
+      "predicted": 454310.7
+    },
+    {
+      "actual": 625000.0,
+      "predicted": 592628.34
+    },
+    {
+      "actual": 430000.0,
+      "predicted": 773569.3
+    },
+    {
+      "actual": 730000.0,
+      "predicted": 1121172.73
+    },
+    {
+      "actual": 434999.0,
+      "predicted": 239478.73
+    },
+    {
+      "actual": 300000.0,
+      "predicted": 229331.92
+    },
+    {
+      "actual": 325000.0,
+      "predicted": 260117.8
+    },
+    {
+      "actual": 500000.0,
+      "predicted": 407249.47
+    },
+    {
+      "actual": 150000.0,
+      "predicted": 182928.5
+    },
+    {
+      "actual": 1000000.0,
+      "predicted": 655182.38
+    },
+    {
+      "actual": 220000.0,
+      "predicted": 217180.46
+    },
+    {
+      "actual": 150000.0,
+      "predicted": 83186.55
+    },
+    {
+      "actual": 409999.0,
+      "predicted": 226470.17
+    },
+    {
+      "actual": 850000.0,
+      "predicted": 921789.51
+    },
+    {
+      "actual": 130000.0,
+      "predicted": 81872.26
+    },
+    {
+      "actual": 350000.0,
+      "predicted": 364309.05
+    },
+    {
+      "actual": 160000.0,
+      "predicted": 205910.67
+    },
+    {
+      "actual": 610000.0,
+      "predicted": 577093.2
+    },
+    {
+      "actual": 580000.0,
+      "predicted": 412602.84
+    },
+    {
+      "actual": 250000.0,
+      "predicted": 201649.15
+    },
+    {
+      "actual": 35000.0,
+      "predicted": 83901.78
+    },
+    {
+      "actual": 40000.0,
+      "predicted": 233630.38
+    },
+    {
+      "actual": 2800000.0,
+      "predicted": 2436245.1
+    },
+    {
+      "actual": 1300000.0,
+      "predicted": 522884.13
+    },
+    {
+      "actual": 280000.0,
+      "predicted": 230195.16
+    },
+    {
+      "actual": 165000.0,
+      "predicted": 364879.94
+    },
+    {
+      "actual": 600000.0,
+      "predicted": 353898.05
+    },
+    {
+      "actual": 400000.0,
+      "predicted": 317261.37
+    },
+    {
+      "actual": 625000.0,
+      "predicted": 373448.85
+    },
+    {
+      "actual": 320000.0,
+      "predicted": 290303.44
+    },
+    {
+      "actual": 160000.0,
+      "predicted": 215765.76
+    },
+    {
+      "actual": 250000.0,
+      "predicted": 106752.77
+    },
+    {
+      "actual": 100000.0,
+      "predicted": 105345.94
+    },
+    {
+      "actual": 229999.0,
+      "predicted": 225960.33
+    },
+    {
+      "actual": 434999.0,
+      "predicted": 459016.59
+    },
+    {
+      "actual": 70000.0,
+      "predicted": 63104.44
+    },
+    {
+      "actual": 250000.0,
+      "predicted": 235076.6
+    },
+    {
+      "actual": 350000.0,
+      "predicted": 520495.33
+    },
+    {
+      "actual": 650000.0,
+      "predicted": 611908.68
+    },
+    {
+      "actual": 250999.0,
+      "predicted": 410510.68
+    },
+    {
+      "actual": 170000.0,
+      "predicted": 295172.67
+    },
+    {
+      "actual": 575000.0,
+      "predicted": 687858.69
+    },
+    {
+      "actual": 225000.0,
+      "predicted": 284590.69
+    },
+    {
+      "actual": 200000.0,
+      "predicted": 296429.07
+    },
+    {
+      "actual": 380000.0,
+      "predicted": 427928.95
+    },
+    {
+      "actual": 450000.0,
+      "predicted": 508557.69
+    },
+    {
+      "actual": 620000.0,
+      "predicted": 373490.07
+    },
+    {
+      "actual": 1500000.0,
+      "predicted": 812690.38
+    },
+    {
+      "actual": 300000.0,
+      "predicted": 346850.19
+    },
+    {
+      "actual": 450000.0,
+      "predicted": 375159.78
+    },
+    {
+      "actual": 260000.0,
+      "predicted": 223284.68
+    },
+    {
+      "actual": 370000.0,
+      "predicted": 302650.62
+    },
+    {
+      "actual": 619000.0,
+      "predicted": 468411.1
+    },
+    {
+      "actual": 98000.0,
+      "predicted": 53775.73
+    },
+    {
+      "actual": 4800000.0,
+      "predicted": 2495550.66
+    },
+    {
+      "actual": 475000.0,
+      "predicted": 515104.02
+    },
+    {
+      "actual": 135000.0,
+      "predicted": 131807.48
+    },
+    {
+      "actual": 300000.0,
+      "predicted": 197386.98
+    },
+    {
+      "actual": 850000.0,
+      "predicted": 423625.6
+    },
+    {
+      "actual": 310000.0,
+      "predicted": 263118.93
+    },
+    {
+      "actual": 150000.0,
+      "predicted": 138519.83
+    },
+    {
+      "actual": 625000.0,
+      "predicted": 578653.98
+    },
+    {
+      "actual": 160000.0,
+      "predicted": 326354.51
+    },
+    {
+      "actual": 800000.0,
+      "predicted": 463949.23
+    },
+    {
+      "actual": 500000.0,
+      "predicted": 164802.13
+    },
+    {
+      "actual": 229999.0,
+      "predicted": 287757.35
+    },
+    {
+      "actual": 550000.0,
+      "predicted": 364574.59
+    },
+    {
+      "actual": 890000.0,
+      "predicted": 890514.26
+    },
+    {
+      "actual": 700000.0,
+      "predicted": 556600.88
+    },
+    {
+      "actual": 260000.0,
+      "predicted": 247397.55
+    },
+    {
+      "actual": 900000.0,
+      "predicted": 708427.42
+    },
+    {
+      "actual": 515000.0,
+      "predicted": 686944.96
+    },
+    {
+      "actual": 1200000.0,
+      "predicted": 545394.36
+    },
+    {
+      "actual": 350000.0,
+      "predicted": 254942.92
+    },
+    {
+      "actual": 260000.0,
+      "predicted": 540815.64
+    },
+    {
+      "actual": 155000.0,
+      "predicted": 348111.97
+    },
+    {
+      "actual": 350000.0,
+      "predicted": 486442.15
+    },
+    {
+      "actual": 430000.0,
+      "predicted": 482760.69
+    },
+    {
+      "actual": 249000.0,
+      "predicted": 234036.79
+    },
+    {
+      "actual": 200000.0,
+      "predicted": 121428.95
+    },
+    {
+      "actual": 225000.0,
+      "predicted": 235624.32
+    },
+    {
+      "actual": 415000.0,
+      "predicted": 474457.23
+    },
+    {
+      "actual": 440000.0,
+      "predicted": 385500.27
+    },
+    {
+      "actual": 415000.0,
+      "predicted": 467133.34
+    },
+    {
+      "actual": 300000.0,
+      "predicted": 183505.76
+    },
+    {
+      "actual": 550000.0,
+      "predicted": 241804.09
+    },
+    {
+      "actual": 475000.0,
+      "predicted": 698368.45
+    },
+    {
+      "actual": 135000.0,
+      "predicted": 145110.04
+    },
+    {
+      "actual": 585000.0,
+      "predicted": 788235.53
+    },
+    {
+      "actual": 725000.0,
+      "predicted": 671101.99
+    },
+    {
+      "actual": 240000.0,
+      "predicted": 303178.79
+    },
+    {
+      "actual": 450000.0,
+      "predicted": 247327.06
+    },
+    {
+      "actual": 325000.0,
+      "predicted": 383517.26
+    },
+    {
+      "actual": 170000.0,
+      "predicted": 287883.22
+    },
+    {
+      "actual": 195000.0,
+      "predicted": 227121.33
+    },
+    {
+      "actual": 1000000.0,
+      "predicted": 751921.33
+    },
+    {
+      "actual": 782000.0,
+      "predicted": 599091.95
+    },
+    {
+      "actual": 265000.0,
+      "predicted": 357752.27
+    },
+    {
+      "actual": 2200000.0,
+      "predicted": 2571307.52
+    },
+    {
+      "actual": 145000.0,
+      "predicted": 136697.82
+    },
+    {
+      "actual": 340000.0,
+      "predicted": 502501.87
+    },
+    {
+      "actual": 210000.0,
+      "predicted": 277515.24
+    },
+    {
+      "actual": 105000.0,
+      "predicted": 75508.54
+    },
+    {
+      "actual": 620000.0,
+      "predicted": 364427.95
+    },
+    {
+      "actual": 350000.0,
+      "predicted": 518390.13
+    },
+    {
+      "actual": 8150000.0,
+      "predicted": 1679518.18
+    },
+    {
+      "actual": 200000.0,
+      "predicted": 386218.56
+    },
+    {
+      "actual": 80000.0,
+      "predicted": 131590.63
+    },
+    {
+      "actual": 1425000.0,
+      "predicted": 1533787.07
+    },
+    {
+      "actual": 500000.0,
+      "predicted": 236542.27
+    },
+    {
+      "actual": 550000.0,
+      "predicted": 408600.45
+    },
+    {
+      "actual": 300000.0,
+      "predicted": 351739.26
+    },
+    {
+      "actual": 650000.0,
+      "predicted": 640706.74
+    },
+    {
+      "actual": 600000.0,
+      "predicted": 417355.59
+    },
+    {
+      "actual": 250000.0,
+      "predicted": 339950.38
+    },
+    {
+      "actual": 425000.0,
+      "predicted": 533477.48
+    },
+    {
+      "actual": 400000.0,
+      "predicted": 436484.45
+    },
+    {
+      "actual": 556000.0,
+      "predicted": 552116.45
+    },
+    {
+      "actual": 150000.0,
+      "predicted": 146823.33
+    },
+    {
+      "actual": 375000.0,
+      "predicted": 341327.29
+    },
+    {
+      "actual": 250000.0,
+      "predicted": 225391.6
+    },
+    {
+      "actual": 1350000.0,
+      "predicted": 1697852.45
+    },
+    {
+      "actual": 90000.0,
+      "predicted": 106918.03
+    },
+    {
+      "actual": 290000.0,
+      "predicted": 517629.07
+    },
+    {
+      "actual": 400000.0,
+      "predicted": 462736.38
+    },
+    {
+      "actual": 284000.0,
+      "predicted": 508462.9
+    },
+    {
+      "actual": 725000.0,
+      "predicted": 741976.61
+    },
+    {
+      "actual": 950000.0,
+      "predicted": 754527.05
+    },
+    {
+      "actual": 225000.0,
+      "predicted": 183954.62
+    },
+    {
+      "actual": 420000.0,
+      "predicted": 361676.54
+    },
+    {
+      "actual": 150000.0,
+      "predicted": 484374.13
+    },
+    {
+      "actual": 2675000.0,
+      "predicted": 1791068.17
+    },
+    {
+      "actual": 200000.0,
+      "predicted": 358565.43
+    },
+    {
+      "actual": 140000.0,
+      "predicted": 139600.68
+    },
+    {
+      "actual": 300000.0,
+      "predicted": 281973.41
+    },
+    {
+      "actual": 350000.0,
+      "predicted": 312330.97
+    },
+    {
+      "actual": 550000.0,
+      "predicted": 732511.92
+    },
+    {
+      "actual": 751000.0,
+      "predicted": 724653.83
+    },
+    {
+      "actual": 310000.0,
+      "predicted": 176454.05
+    },
+    {
+      "actual": 285000.0,
+      "predicted": 247833.14
+    },
+    {
+      "actual": 140000.0,
+      "predicted": 217180.46
+    },
+    {
+      "actual": 270000.0,
+      "predicted": 168725.95
+    },
+    {
+      "actual": 150000.0,
+      "predicted": 146284.95
+    },
+    {
+      "actual": 400000.0,
+      "predicted": 363011.4
+    },
+    {
+      "actual": 1550000.0,
+      "predicted": 1164807.55
+    },
+    {
+      "actual": 70000.0,
+      "predicted": 132016.08
+    },
+    {
+      "actual": 800000.0,
+      "predicted": 664038.58
+    },
+    {
+      "actual": 250000.0,
+      "predicted": 201596.92
+    },
+    {
+      "actual": 600000.0,
+      "predicted": 545514.5
+    },
+    {
+      "actual": 125000.0,
+      "predicted": 306154.53
+    },
+    {
+      "actual": 120000.0,
+      "predicted": 195811.6
+    },
+    {
+      "actual": 185000.0,
+      "predicted": 217092.6
+    },
+    {
+      "actual": 55000.0,
+      "predicted": 303224.61
+    },
+    {
+      "actual": 615000.0,
+      "predicted": 1071114.83
+    },
+    {
+      "actual": 675000.0,
+      "predicted": 454762.81
+    },
+    {
+      "actual": 300000.0,
+      "predicted": 254626.45
+    },
+    {
+      "actual": 1030000.0,
+      "predicted": 939544.68
+    },
+    {
+      "actual": 229999.0,
+      "predicted": 142739.73
+    },
+    {
+      "actual": 350000.0,
+      "predicted": 285174.39
+    },
+    {
+      "actual": 123000.0,
+      "predicted": 113421.14
+    },
+    {
+      "actual": 221000.0,
+      "predicted": 133606.2
+    },
+    {
+      "actual": 575000.0,
+      "predicted": 525519.74
+    },
+    {
+      "actual": 150000.0,
+      "predicted": 191691.03
+    },
+    {
+      "actual": 480000.0,
+      "predicted": 440374.09
+    },
+    {
+      "actual": 350000.0,
+      "predicted": 277150.54
+    },
+    {
+      "actual": 300000.0,
+      "predicted": 137681.39
+    },
+    {
+      "actual": 114999.0,
+      "predicted": 168655.9
+    },
+    {
+      "actual": 450000.0,
+      "predicted": 569669.5
+    },
+    {
+      "actual": 375000.0,
+      "predicted": 465889.39
+    },
+    {
+      "actual": 70000.0,
+      "predicted": 113284.28
+    },
+    {
+      "actual": 100000.0,
+      "predicted": 139494.06
+    },
+    {
+      "actual": 220000.0,
+      "predicted": 301421.91
+    },
+    {
+      "actual": 425000.0,
+      "predicted": 431933.45
+    },
+    {
+      "actual": 420000.0,
+      "predicted": 551887.43
+    },
+    {
+      "actual": 150000.0,
+      "predicted": 86449.78
+    },
+    {
+      "actual": 370000.0,
+      "predicted": 189645.55
+    },
+    {
+      "actual": 1250000.0,
+      "predicted": 748258.62
+    },
+    {
+      "actual": 229999.0,
+      "predicted": 271357.1
+    },
+    {
+      "actual": 600000.0,
+      "predicted": 402186.67
+    },
+    {
+      "actual": 260000.0,
+      "predicted": 351047.39
+    },
+    {
+      "actual": 200000.0,
+      "predicted": 358609.75
+    },
+    {
+      "actual": 500000.0,
+      "predicted": 624998.09
+    },
+    {
+      "actual": 800000.0,
+      "predicted": 485633.2
+    },
+    {
+      "actual": 900000.0,
+      "predicted": 773569.3
+    },
+    {
+      "actual": 480000.0,
+      "predicted": 485174.38
+    },
+    {
+      "actual": 260000.0,
+      "predicted": 441602.95
+    },
+    {
+      "actual": 1200000.0,
+      "predicted": 533477.48
+    },
+    {
+      "actual": 180000.0,
+      "predicted": 295811.41
+    },
+    {
+      "actual": 650000.0,
+      "predicted": 570877.63
+    },
+    {
+      "actual": 890000.0,
+      "predicted": 594321.51
+    },
+    {
+      "actual": 750000.0,
+      "predicted": 515601.8
+    },
+    {
+      "actual": 150000.0,
+      "predicted": 302219.41
+    },
+    {
+      "actual": 61000.0,
+      "predicted": 69129.44
+    },
+    {
+      "actual": 500000.0,
+      "predicted": 535110.98
+    },
+    {
+      "actual": 795000.0,
+      "predicted": 867360.72
+    },
+    {
+      "actual": 200000.0,
+      "predicted": 270146.24
+    },
+    {
+      "actual": 450000.0,
+      "predicted": 425128.75
+    },
+    {
+      "actual": 1451000.0,
+      "predicted": 1217682.83
+    },
+    {
+      "actual": 515000.0,
+      "predicted": 600706.68
+    },
+    {
+      "actual": 370000.0,
+      "predicted": 399458.26
+    },
+    {
+      "actual": 1000000.0,
+      "predicted": 1039139.75
+    },
+    {
+      "actual": 600000.0,
+      "predicted": 444103.73
+    },
+    {
+      "actual": 175000.0,
+      "predicted": 287667.55
+    },
+    {
+      "actual": 350000.0,
+      "predicted": 305061.64
+    },
+    {
+      "actual": 525000.0,
+      "predicted": 629643.4
+    },
+    {
+      "actual": 300000.0,
+      "predicted": 166881.35
+    },
+    {
+      "actual": 325000.0,
+      "predicted": 448884.56
+    },
+    {
+      "actual": 430000.0,
+      "predicted": 418717.5
+    },
+    {
+      "actual": 1000000.0,
+      "predicted": 101616.28
+    },
+    {
+      "actual": 70000.0,
+      "predicted": 167752.29
+    },
+    {
+      "actual": 375000.0,
+      "predicted": 501467.53
+    },
+    {
+      "actual": 860000.0,
+      "predicted": 742798.09
+    },
+    {
+      "actual": 640000.0,
+      "predicted": 519597.91
+    },
+    {
+      "actual": 950000.0,
+      "predicted": 553183.58
+    },
+    {
+      "actual": 409999.0,
+      "predicted": 419730.81
+    },
+    {
+      "actual": 100000.0,
+      "predicted": 88323.8
+    },
+    {
+      "actual": 70000.0,
+      "predicted": 139870.49
+    },
+    {
+      "actual": 850000.0,
+      "predicted": 675432.19
+    },
+    {
+      "actual": 830000.0,
+      "predicted": 812690.38
+    },
+    {
+      "actual": 130000.0,
+      "predicted": 143195.0
+    },
+    {
+      "actual": 910000.0,
+      "predicted": 696795.79
+    },
+    {
+      "actual": 1050000.0,
+      "predicted": 701525.31
+    },
+    {
+      "actual": 250000.0,
+      "predicted": 403859.19
+    },
+    {
+      "actual": 150000.0,
+      "predicted": 152296.77
+    },
+    {
+      "actual": 110000.0,
+      "predicted": 164543.73
+    },
+    {
+      "actual": 130000.0,
+      "predicted": 106542.27
+    },
+    {
+      "actual": 450000.0,
+      "predicted": 565951.43
+    },
+    {
+      "actual": 350000.0,
+      "predicted": 496268.22
+    },
+    {
+      "actual": 140000.0,
+      "predicted": 155661.89
+    },
+    {
+      "actual": 100000.0,
+      "predicted": 95862.69
+    },
+    {
+      "actual": 520000.0,
+      "predicted": 543501.69
+    },
+    {
+      "actual": 550000.0,
+      "predicted": 751481.63
+    },
+    {
+      "actual": 110000.0,
+      "predicted": 125400.67
+    },
+    {
+      "actual": 550000.0,
+      "predicted": 353119.19
+    },
+    {
+      "actual": 190000.0,
+      "predicted": 195427.22
+    },
+    {
+      "actual": 900000.0,
+      "predicted": 806229.44
+    },
+    {
+      "actual": 260000.0,
+      "predicted": 217180.46
+    },
+    {
+      "actual": 400000.0,
+      "predicted": 345845.22
+    },
+    {
+      "actual": 75000.0,
+      "predicted": 66918.73
+    },
+    {
+      "actual": 240000.0,
+      "predicted": 305666.8
+    },
+    {
+      "actual": 1500000.0,
+      "predicted": 969226.81
+    },
+    {
+      "actual": 211000.0,
+      "predicted": 403859.19
+    },
+    {
+      "actual": 1100000.0,
+      "predicted": 1725335.75
+    },
+    {
+      "actual": 300000.0,
+      "predicted": 354852.55
+    },
+    {
+      "actual": 310000.0,
+      "predicted": 279315.97
+    },
+    {
+      "actual": 130000.0,
+      "predicted": 183505.76
+    },
+    {
+      "actual": 350000.0,
+      "predicted": 302422.33
+    },
+    {
+      "actual": 288000.0,
+      "predicted": 550877.74
+    },
+    {
+      "actual": 420000.0,
+      "predicted": 172644.17
+    },
+    {
+      "actual": 800000.0,
+      "predicted": 630294.16
+    },
+    {
+      "actual": 311000.0,
+      "predicted": 348265.55
+    },
+    {
+      "actual": 475000.0,
+      "predicted": 264612.17
+    },
+    {
+      "actual": 715000.0,
+      "predicted": 571633.87
+    },
+    {
+      "actual": 110000.0,
+      "predicted": 164658.88
+    },
+    {
+      "actual": 90000.0,
+      "predicted": 87332.35
+    },
+    {
+      "actual": 285000.0,
+      "predicted": 329991.61
+    },
+    {
+      "actual": 900000.0,
+      "predicted": 1297337.52
+    },
+    {
+      "actual": 450000.0,
+      "predicted": 535010.54
+    },
+    {
+      "actual": 310000.0,
+      "predicted": 620668.14
+    },
+    {
+      "actual": 665000.0,
+      "predicted": 601718.61
+    },
+    {
+      "actual": 330000.0,
+      "predicted": 339735.49
+    },
+    {
+      "actual": 400000.0,
+      "predicted": 308220.34
+    },
+    {
+      "actual": 93000.0,
+      "predicted": 91050.0
+    },
+    {
+      "actual": 600000.0,
+      "predicted": 660531.53
+    },
+    {
+      "actual": 440000.0,
+      "predicted": 306968.12
+    },
+    {
+      "actual": 750000.0,
+      "predicted": 834060.38
+    },
+    {
+      "actual": 80000.0,
+      "predicted": 91438.36
+    },
+    {
+      "actual": 275000.0,
+      "predicted": 217535.11
+    },
+    {
+      "actual": 570000.0,
+      "predicted": 652878.19
+    },
+    {
+      "actual": 1100000.0,
+      "predicted": 638419.92
+    },
+    {
+      "actual": 225000.0,
+      "predicted": 113284.28
+    },
+    {
+      "actual": 60000.0,
+      "predicted": 74428.01
+    },
+    {
+      "actual": 700000.0,
+      "predicted": 686944.96
+    },
+    {
+      "actual": 425000.0,
+      "predicted": 455243.45
+    },
+    {
+      "actual": 300000.0,
+      "predicted": 272544.71
+    },
+    {
+      "actual": 550000.0,
+      "predicted": 436403.21
+    },
+    {
+      "actual": 535000.0,
+      "predicted": 469123.33
+    },
+    {
+      "actual": 145000.0,
+      "predicted": 73461.93
+    },
+    {
+      "actual": 425000.0,
+      "predicted": 390319.76
+    },
+    {
+      "actual": 525000.0,
+      "predicted": 240697.71
+    },
+    {
+      "actual": 350000.0,
+      "predicted": 296429.07
+    },
+    {
+      "actual": 110000.0,
+      "predicted": 236765.6
+    },
+    {
+      "actual": 80000.0,
+      "predicted": 77531.06
+    },
+    {
+      "actual": 300000.0,
+      "predicted": 393201.32
+    },
+    {
+      "actual": 125000.0,
+      "predicted": 118731.08
+    },
+    {
+      "actual": 400000.0,
+      "predicted": 123045.92
+    },
+    {
+      "actual": 484999.0,
+      "predicted": 590310.51
+    },
+    {
+      "actual": 160000.0,
+      "predicted": 305610.27
+    },
+    {
+      "actual": 300000.0,
+      "predicted": 338531.22
+    },
+    {
+      "actual": 275000.0,
+      "predicted": 277230.85
+    },
+    {
+      "actual": 150000.0,
+      "predicted": 183826.28
+    },
+    {
+      "actual": 465000.0,
+      "predicted": 1442467.82
+    },
+    {
+      "actual": 595000.0,
+      "predicted": 456167.47
+    },
+    {
+      "actual": 459999.0,
+      "predicted": 422217.53
+    },
+    {
+      "actual": 150000.0,
+      "predicted": 211609.25
+    },
+    {
+      "actual": 290000.0,
+      "predicted": 341968.65
+    },
+    {
+      "actual": 175000.0,
+      "predicted": 190244.98
+    },
+    {
+      "actual": 110000.0,
+      "predicted": 166425.61
+    },
+    {
+      "actual": 145000.0,
+      "predicted": 169474.58
+    },
+    {
+      "actual": 170000.0,
+      "predicted": 168872.89
+    },
+    {
+      "actual": 70000.0,
+      "predicted": 79690.39
+    },
+    {
+      "actual": 265000.0,
+      "predicted": 256079.37
+    },
+    {
+      "actual": 325000.0,
+      "predicted": 353136.64
+    },
+    {
+      "actual": 490000.0,
+      "predicted": 696895.33
+    },
+    {
+      "actual": 500000.0,
+      "predicted": 631236.14
+    },
+    {
+      "actual": 275000.0,
+      "predicted": 394611.84
+    },
+    {
+      "actual": 1100000.0,
+      "predicted": 905218.93
+    },
+    {
+      "actual": 700000.0,
+      "predicted": 596034.64
+    },
+    {
+      "actual": 195000.0,
+      "predicted": 298638.43
+    },
+    {
+      "actual": 110000.0,
+      "predicted": 71141.09
+    },
+    {
+      "actual": 170000.0,
+      "predicted": 296704.61
+    },
+    {
+      "actual": 145000.0,
+      "predicted": 90292.17
+    },
+    {
+      "actual": 625000.0,
+      "predicted": 454616.06
+    },
+    {
+      "actual": 600000.0,
+      "predicted": 277150.54
+    },
+    {
+      "actual": 570000.0,
+      "predicted": 543159.35
+    },
+    {
+      "actual": 550000.0,
+      "predicted": 517629.07
+    },
+    {
+      "actual": 500000.0,
+      "predicted": 662811.78
+    },
+    {
+      "actual": 70000.0,
+      "predicted": 75688.5
+    },
+    {
+      "actual": 630000.0,
+      "predicted": 686944.96
+    },
+    {
+      "actual": 130000.0,
+      "predicted": 237784.05
+    },
+    {
+      "actual": 120000.0,
+      "predicted": 175559.4
+    },
+    {
+      "actual": 75000.0,
+      "predicted": 103427.31
+    },
+    {
+      "actual": 500000.0,
+      "predicted": 528452.63
+    },
+    {
+      "actual": 614000.0,
+      "predicted": 701525.31
+    },
+    {
+      "actual": 365000.0,
+      "predicted": 425151.54
+    },
+    {
+      "actual": 250000.0,
+      "predicted": 236867.12
+    },
+    {
+      "actual": 300000.0,
+      "predicted": 253151.97
+    },
+    {
+      "actual": 65000.0,
+      "predicted": 85557.06
+    },
+    {
+      "actual": 721000.0,
+      "predicted": 611428.52
+    },
+    {
+      "actual": 180000.0,
+      "predicted": 232684.13
+    },
+    {
+      "actual": 850000.0,
+      "predicted": 491299.09
+    },
+    {
+      "actual": 1100000.0,
+      "predicted": 881142.82
+    },
+    {
+      "actual": 360000.0,
+      "predicted": 352635.28
+    },
+    {
+      "actual": 850000.0,
+      "predicted": 588277.18
+    },
+    {
+      "actual": 1500000.0,
+      "predicted": 2234506.84
+    },
+    {
+      "actual": 330000.0,
+      "predicted": 352080.01
+    },
+    {
+      "actual": 350000.0,
+      "predicted": 584972.36
+    },
+    {
+      "actual": 61000.0,
+      "predicted": 74894.9
+    },
+    {
+      "actual": 575000.0,
+      "predicted": 759783.89
+    },
+    {
+      "actual": 240000.0,
+      "predicted": 308911.3
+    },
+    {
+      "actual": 180000.0,
+      "predicted": 152324.5
+    },
+    {
+      "actual": 830000.0,
+      "predicted": 541815.55
+    },
+    {
+      "actual": 550000.0,
+      "predicted": 518171.6
+    },
+    {
+      "actual": 399000.0,
+      "predicted": 609312.33
+    },
+    {
+      "actual": 250000.0,
+      "predicted": 294217.39
+    },
+    {
+      "actual": 426000.0,
+      "predicted": 526169.25
+    },
+    {
+      "actual": 110000.0,
+      "predicted": 164053.68
+    },
+    {
+      "actual": 1195000.0,
+      "predicted": 1117200.8
+    },
+    {
+      "actual": 650000.0,
+      "predicted": 533477.48
+    },
+    {
+      "actual": 800000.0,
+      "predicted": 936684.67
+    },
+    {
+      "actual": 600000.0,
+      "predicted": 358688.22
+    },
+    {
+      "actual": 1100000.0,
+      "predicted": 950314.57
+    },
+    {
+      "actual": 310000.0,
+      "predicted": 343637.93
+    },
+    {
+      "actual": 550000.0,
+      "predicted": 845143.39
+    },
+    {
+      "actual": 199000.0,
+      "predicted": 150648.61
+    },
+    {
+      "actual": 700000.0,
+      "predicted": 532634.45
+    },
+    {
+      "actual": 735000.0,
+      "predicted": 1689615.8
+    },
+    {
+      "actual": 430000.0,
+      "predicted": 331283.19
+    },
+    {
+      "actual": 150000.0,
+      "predicted": 292744.58
+    },
+    {
+      "actual": 650000.0,
+      "predicted": 743361.76
+    },
+    {
+      "actual": 270000.0,
+      "predicted": 176221.14
+    },
+    {
+      "actual": 85000.0,
+      "predicted": 68382.42
+    },
+    {
+      "actual": 110000.0,
+      "predicted": 143374.74
+    },
+    {
+      "actual": 5500000.0,
+      "predicted": 1427275.3
+    },
+    {
+      "actual": 75000.0,
+      "predicted": 97434.45
+    },
+    {
+      "actual": 210000.0,
+      "predicted": 200282.61
+    },
+    {
+      "actual": 370000.0,
+      "predicted": 310773.3
+    },
+    {
+      "actual": 200000.0,
+      "predicted": 268534.7
+    },
+    {
+      "actual": 490000.0,
+      "predicted": 429143.73
+    },
+    {
+      "actual": 700000.0,
+      "predicted": 326100.52
+    },
+    {
+      "actual": 650000.0,
+      "predicted": 621507.28
+    },
+    {
+      "actual": 325000.0,
+      "predicted": 250313.64
+    },
+    {
+      "actual": 130000.0,
+      "predicted": 111214.62
+    },
+    {
+      "actual": 450000.0,
+      "predicted": 425151.54
+    },
+    {
+      "actual": 750000.0,
+      "predicted": 2608226.07
+    },
+    {
+      "actual": 600000.0,
+      "predicted": 542481.4
+    },
+    {
+      "actual": 175000.0,
+      "predicted": 172765.23
+    },
+    {
+      "actual": 213000.0,
+      "predicted": 285412.7
+    },
+    {
+      "actual": 350000.0,
+      "predicted": 785786.59
+    },
+    {
+      "actual": 500000.0,
+      "predicted": 178026.1
+    },
+    {
+      "actual": 320000.0,
+      "predicted": 349828.87
+    },
+    {
+      "actual": 120000.0,
+      "predicted": 202780.44
+    },
+    {
+      "actual": 180000.0,
+      "predicted": 241741.32
+    },
+    {
+      "actual": 390000.0,
+      "predicted": 253224.32
+    },
+    {
+      "actual": 97000.0,
+      "predicted": 142830.33
+    },
+    {
+      "actual": 750000.0,
+      "predicted": 517920.7
+    },
+    {
+      "actual": 250000.0,
+      "predicted": 204082.83
+    },
+    {
+      "actual": 165000.0,
+      "predicted": 294778.65
+    },
+    {
+      "actual": 40000.0,
+      "predicted": 53070.33
+    },
+    {
+      "actual": 250000.0,
+      "predicted": 159297.9
+    },
+    {
+      "actual": 450000.0,
+      "predicted": 494645.73
+    },
+    {
+      "actual": 300000.0,
+      "predicted": 155364.63
+    },
+    {
+      "actual": 775000.0,
+      "predicted": 556600.88
+    },
+    {
+      "actual": 850000.0,
+      "predicted": 1004003.6
+    },
+    {
+      "actual": 450000.0,
+      "predicted": 366084.09
+    },
+    {
+      "actual": 225000.0,
+      "predicted": 174477.74
+    },
+    {
+      "actual": 495000.0,
+      "predicted": 378106.84
+    },
+    {
+      "actual": 250000.0,
+      "predicted": 429633.68
+    },
+    {
+      "actual": 434999.0,
+      "predicted": 487454.27
+    },
+    {
+      "actual": 800000.0,
+      "predicted": 526839.61
+    },
+    {
+      "actual": 300000.0,
+      "predicted": 617144.38
+    },
+    {
+      "actual": 300000.0,
+      "predicted": 103427.31
+    },
+    {
+      "actual": 4500000.0,
+      "predicted": 681473.88
+    },
+    {
+      "actual": 75000.0,
+      "predicted": 91886.57
+    },
+    {
+      "actual": 640000.0,
+      "predicted": 717836.7
+    },
+    {
+      "actual": 80000.0,
+      "predicted": 74619.94
+    },
+    {
+      "actual": 180000.0,
+      "predicted": 240367.82
+    },
+    {
+      "actual": 784000.0,
+      "predicted": 1171475.41
+    },
+    {
+      "actual": 1800000.0,
+      "predicted": 1790908.27
+    },
+    {
+      "actual": 190000.0,
+      "predicted": 254833.09
+    },
+    {
+      "actual": 1140000.0,
+      "predicted": 718018.7
+    },
+    {
+      "actual": 1900000.0,
+      "predicted": 938509.29
+    },
+    {
+      "actual": 894999.0,
+      "predicted": 1203793.01
+    },
+    {
+      "actual": 240000.0,
+      "predicted": 513264.36
+    },
+    {
+      "actual": 280000.0,
+      "predicted": 358688.22
+    },
+    {
+      "actual": 900000.0,
+      "predicted": 182693.97
+    },
+    {
+      "actual": 70000.0,
+      "predicted": 161038.38
+    },
+    {
+      "actual": 100000.0,
+      "predicted": 88686.6
+    },
+    {
+      "actual": 220000.0,
+      "predicted": 241804.09
+    },
+    {
+      "actual": 650000.0,
+      "predicted": 677176.97
+    },
+    {
+      "actual": 1000000.0,
+      "predicted": 603358.42
+    },
+    {
+      "actual": 520000.0,
+      "predicted": 528452.63
+    },
+    {
+      "actual": 625000.0,
+      "predicted": 536545.84
+    },
+    {
+      "actual": 760000.0,
+      "predicted": 460710.48
+    },
+    {
+      "actual": 70000.0,
+      "predicted": 82493.92
+    },
+    {
+      "actual": 310000.0,
+      "predicted": 358281.22
+    },
+    {
+      "actual": 65000.0,
+      "predicted": 216093.44
+    },
+    {
+      "actual": 175000.0,
+      "predicted": 285292.73
+    },
+    {
+      "actual": 95000.0,
+      "predicted": 96934.2
+    },
+    {
+      "actual": 275000.0,
+      "predicted": 440487.55
+    },
+    {
+      "actual": 160000.0,
+      "predicted": 366084.09
+    },
+    {
+      "actual": 350000.0,
+      "predicted": 293280.14
+    },
+    {
+      "actual": 650000.0,
+      "predicted": 560290.58
+    },
+    {
+      "actual": 270000.0,
+      "predicted": 382424.92
+    },
+    {
+      "actual": 210000.0,
+      "predicted": 255730.6
+    },
+    {
+      "actual": 550000.0,
+      "predicted": 509830.5
+    },
+    {
+      "actual": 285000.0,
+      "predicted": 514958.26
+    },
+    {
+      "actual": 42000.0,
+      "predicted": 74692.69
+    },
+    {
+      "actual": 350000.0,
+      "predicted": 388325.22
+    },
+    {
+      "actual": 300000.0,
+      "predicted": 341639.8
+    },
+    {
+      "actual": 260000.0,
+      "predicted": 234032.83
+    },
+    {
+      "actual": 420000.0,
+      "predicted": 379148.19
+    },
+    {
+      "actual": 760000.0,
+      "predicted": 1004003.6
+    },
+    {
+      "actual": 375000.0,
+      "predicted": 532358.58
+    },
+    {
+      "actual": 125000.0,
+      "predicted": 132818.61
+    },
+    {
+      "actual": 800000.0,
+      "predicted": 867360.72
+    },
+    {
+      "actual": 426000.0,
+      "predicted": 839663.32
+    },
+    {
+      "actual": 40000.0,
+      "predicted": 110694.4
+    },
+    {
+      "actual": 300000.0,
+      "predicted": 320416.61
+    },
+    {
+      "actual": 35000.0,
+      "predicted": 163520.49
+    },
+    {
+      "actual": 204999.0,
+      "predicted": 209085.94
+    },
+    {
+      "actual": 290000.0,
+      "predicted": 300393.02
+    },
+    {
+      "actual": 210000.0,
+      "predicted": 180857.43
+    },
+    {
+      "actual": 60000.0,
+      "predicted": 72241.25
+    },
+    {
+      "actual": 650000.0,
+      "predicted": 622589.56
+    },
+    {
+      "actual": 875000.0,
+      "predicted": 544970.9
+    },
+    {
+      "actual": 950000.0,
+      "predicted": 856867.38
+    },
+    {
+      "actual": 610000.0,
+      "predicted": 786528.34
+    },
+    {
+      "actual": 155000.0,
+      "predicted": 322135.77
+    },
+    {
+      "actual": 716000.0,
+      "predicted": 474770.1
+    },
+    {
+      "actual": 650000.0,
+      "predicted": 165326.78
+    },
+    {
+      "actual": 60000.0,
+      "predicted": 93694.25
+    },
+    {
+      "actual": 1225000.0,
+      "predicted": 918657.09
+    },
+    {
+      "actual": 150000.0,
+      "predicted": 121485.74
+    },
+    {
+      "actual": 1300000.0,
+      "predicted": 2608226.07
+    },
+    {
+      "actual": 300000.0,
+      "predicted": 353853.1
+    },
+    {
+      "actual": 100000.0,
+      "predicted": 65872.93
+    },
+    {
+      "actual": 300000.0,
+      "predicted": 155364.63
+    },
+    {
+      "actual": 825000.0,
+      "predicted": 1065765.15
+    },
+    {
+      "actual": 95000.0,
+      "predicted": 105093.33
+    },
+    {
+      "actual": 675000.0,
+      "predicted": 939660.35
+    },
+    {
+      "actual": 220000.0,
+      "predicted": 163618.75
+    },
+    {
+      "actual": 325000.0,
+      "predicted": 487577.6
+    },
+    {
+      "actual": 650000.0,
+      "predicted": 1378792.09
+    },
+    {
+      "actual": 800000.0,
+      "predicted": 531524.86
+    },
+    {
+      "actual": 940000.0,
+      "predicted": 522575.57
+    },
+    {
+      "actual": 300000.0,
+      "predicted": 365791.63
+    },
+    {
+      "actual": 350000.0,
+      "predicted": 276619.3
+    },
+    {
+      "actual": 500000.0,
+      "predicted": 532287.17
+    },
+    {
+      "actual": 1100000.0,
+      "predicted": 397166.17
+    },
+    {
+      "actual": 110000.0,
+      "predicted": 277150.54
+    },
+    {
+      "actual": 600000.0,
+      "predicted": 368438.79
+    },
+    {
+      "actual": 110000.0,
+      "predicted": 148073.99
+    },
+    {
+      "actual": 390000.0,
+      "predicted": 360228.0
+    },
+    {
+      "actual": 225000.0,
+      "predicted": 207655.43
+    },
+    {
+      "actual": 200000.0,
+      "predicted": 159300.28
+    },
+    {
+      "actual": 525000.0,
+      "predicted": 323054.15
+    },
+    {
+      "actual": 300000.0,
+      "predicted": 341141.14
+    },
+    {
+      "actual": 210000.0,
+      "predicted": 203620.85
+    },
+    {
+      "actual": 2650000.0,
+      "predicted": 1538769.84
+    },
+    {
+      "actual": 95000.0,
+      "predicted": 89950.39
+    },
+    {
+      "actual": 195000.0,
+      "predicted": 209672.84
+    },
+    {
+      "actual": 300000.0,
+      "predicted": 324889.63
+    },
+    {
+      "actual": 825000.0,
+      "predicted": 723363.19
+    },
+    {
+      "actual": 950000.0,
+      "predicted": 890161.08
+    },
+    {
+      "actual": 1085000.0,
+      "predicted": 1071114.83
+    },
+    {
+      "actual": 120000.0,
+      "predicted": 104233.84
+    },
+    {
+      "actual": 200000.0,
+      "predicted": 352655.39
+    },
+    {
+      "actual": 600000.0,
+      "predicted": 611428.52
+    },
+    {
+      "actual": 265000.0,
+      "predicted": 323372.61
+    },
+    {
+      "actual": 198000.0,
+      "predicted": 352317.63
+    },
+    {
+      "actual": 138000.0,
+      "predicted": 293280.14
+    },
+    {
+      "actual": 250000.0,
+      "predicted": 205439.24
+    },
+    {
+      "actual": 240000.0,
+      "predicted": 172991.62
+    },
+    {
+      "actual": 610000.0,
+      "predicted": 542612.86
+    },
+    {
+      "actual": 250000.0,
+      "predicted": 293954.28
+    },
+    {
+      "actual": 120000.0,
+      "predicted": 195572.2
+    },
+    {
+      "actual": 200000.0,
+      "predicted": 276883.89
+    },
+    {
+      "actual": 685000.0,
+      "predicted": 660264.6
+    },
+    {
+      "actual": 220000.0,
+      "predicted": 161478.69
+    },
+    {
+      "actual": 850000.0,
+      "predicted": 489358.61
+    },
+    {
+      "actual": 231999.0,
+      "predicted": 347101.1
+    },
+    {
+      "actual": 600000.0,
+      "predicted": 667144.22
+    },
+    {
+      "actual": 375000.0,
+      "predicted": 359204.9
+    },
+    {
+      "actual": 250000.0,
+      "predicted": 350528.42
+    },
+    {
+      "actual": 90000.0,
+      "predicted": 87048.94
+    },
+    {
+      "actual": 850000.0,
+      "predicted": 577554.58
+    },
+    {
+      "actual": 850000.0,
+      "predicted": 725843.2
+    },
+    {
+      "actual": 300000.0,
+      "predicted": 329072.3
+    },
+    {
+      "actual": 78692.0,
+      "predicted": 214156.04
+    },
+    {
+      "actual": 85000.0,
+      "predicted": 120422.79
+    },
+    {
+      "actual": 450000.0,
+      "predicted": 507657.25
+    },
+    {
+      "actual": 78000.0,
+      "predicted": 147585.26
+    },
+    {
+      "actual": 400000.0,
+      "predicted": 349455.26
+    },
+    {
+      "actual": 200000.0,
+      "predicted": 399776.09
+    },
+    {
+      "actual": 300000.0,
+      "predicted": 169997.58
+    },
+    {
+      "actual": 980000.0,
+      "predicted": 1004384.27
+    },
+    {
+      "actual": 600000.0,
+      "predicted": 837153.78
+    },
+    {
+      "actual": 475000.0,
+      "predicted": 529904.41
+    },
+    {
+      "actual": 150000.0,
+      "predicted": 422277.14
+    },
+    {
+      "actual": 160000.0,
+      "predicted": 212133.56
+    },
+    {
+      "actual": 655000.0,
+      "predicted": 517211.92
+    },
+    {
+      "actual": 1000000.0,
+      "predicted": 631236.14
+    },
+    {
+      "actual": 350000.0,
+      "predicted": 405247.76
+    },
+    {
+      "actual": 710000.0,
+      "predicted": 1900675.87
+    },
+    {
+      "actual": 500000.0,
+      "predicted": 284300.46
+    },
+    {
+      "actual": 399000.0,
+      "predicted": 416176.02
+    },
+    {
+      "actual": 105000.0,
+      "predicted": 109831.64
+    },
+    {
+      "actual": 3100000.0,
+      "predicted": 549366.62
+    },
+    {
+      "actual": 451000.0,
+      "predicted": 474970.43
+    },
+    {
+      "actual": 340000.0,
+      "predicted": 182798.78
+    },
+    {
+      "actual": 750000.0,
+      "predicted": 618345.95
+    },
+    {
+      "actual": 75000.0,
+      "predicted": 99778.36
+    },
+    {
+      "actual": 400000.0,
+      "predicted": 205429.59
+    },
+    {
+      "actual": 320000.0,
+      "predicted": 376166.4
+    },
+    {
+      "actual": 425000.0,
+      "predicted": 357840.73
+    },
+    {
+      "actual": 80000.0,
+      "predicted": 77916.65
+    },
+    {
+      "actual": 875000.0,
+      "predicted": 778271.43
+    },
+    {
+      "actual": 225000.0,
+      "predicted": 273142.1
+    },
+    {
+      "actual": 240000.0,
+      "predicted": 243293.95
+    },
+    {
+      "actual": 190000.0,
+      "predicted": 230297.23
+    },
+    {
+      "actual": 675000.0,
+      "predicted": 798254.94
+    },
+    {
+      "actual": 155000.0,
+      "predicted": 87652.62
+    },
+    {
+      "actual": 275000.0,
+      "predicted": 96089.84
+    },
+    {
+      "actual": 450000.0,
+      "predicted": 766179.75
+    },
+    {
+      "actual": 300000.0,
+      "predicted": 370487.66
+    },
+    {
+      "actual": 250000.0,
+      "predicted": 242327.15
+    },
+    {
+      "actual": 480000.0,
+      "predicted": 399146.29
+    },
+    {
+      "actual": 1150000.0,
+      "predicted": 612420.45
+    },
+    {
+      "actual": 68000.0,
+      "predicted": 69355.27
+    },
+    {
+      "actual": 50000.0,
+      "predicted": 73171.82
+    },
+    {
+      "actual": 750000.0,
+      "predicted": 641829.56
+    },
+    {
+      "actual": 325000.0,
+      "predicted": 244424.02
+    },
+    {
+      "actual": 250000.0,
+      "predicted": 185389.27
+    },
+    {
+      "actual": 790000.0,
+      "predicted": 732416.1
+    },
+    {
+      "actual": 175000.0,
+      "predicted": 205197.21
+    },
+    {
+      "actual": 900000.0,
+      "predicted": 640522.85
+    },
+    {
+      "actual": 2800000.0,
+      "predicted": 1811003.41
+    },
+    {
+      "actual": 539000.0,
+      "predicted": 529466.96
+    },
+    {
+      "actual": 390000.0,
+      "predicted": 522062.54
+    },
+    {
+      "actual": 541000.0,
+      "predicted": 939544.68
+    },
+    {
+      "actual": 396000.0,
+      "predicted": 447807.38
+    },
+    {
+      "actual": 790000.0,
+      "predicted": 358697.18
+    },
+    {
+      "actual": 195000.0,
+      "predicted": 218238.61
+    },
+    {
+      "actual": 450000.0,
+      "predicted": 267459.48
+    },
+    {
+      "actual": 1300000.0,
+      "predicted": 2672730.25
+    },
+    {
+      "actual": 248000.0,
+      "predicted": 179605.52
+    },
+    {
+      "actual": 520000.0,
+      "predicted": 395382.64
+    },
+    {
+      "actual": 1250000.0,
+      "predicted": 837833.06
+    },
+    {
+      "actual": 250000.0,
+      "predicted": 256789.65
+    },
+    {
+      "actual": 430000.0,
+      "predicted": 630304.45
+    },
+    {
+      "actual": 125000.0,
+      "predicted": 146756.51
+    },
+    {
+      "actual": 1250000.0,
+      "predicted": 617493.25
+    },
+    {
+      "actual": 210000.0,
+      "predicted": 227558.75
+    },
+    {
+      "actual": 415000.0,
+      "predicted": 355104.4
+    },
+    {
+      "actual": 250000.0,
+      "predicted": 291822.92
+    },
+    {
+      "actual": 550000.0,
+      "predicted": 535236.67
+    },
+    {
+      "actual": 305000.0,
+      "predicted": 278313.89
+    },
+    {
+      "actual": 725000.0,
+      "predicted": 456182.3
+    },
+    {
+      "actual": 300000.0,
+      "predicted": 545209.48
+    },
+    {
+      "actual": 51111.0,
+      "predicted": 77938.33
+    },
+    {
+      "actual": 280000.0,
+      "predicted": 330536.77
+    },
+    {
+      "actual": 200000.0,
+      "predicted": 247327.06
+    },
+    {
+      "actual": 75000.0,
+      "predicted": 115330.1
+    },
+    {
+      "actual": 280000.0,
+      "predicted": 352004.68
+    },
+    {
+      "actual": 350000.0,
+      "predicted": 428050.91
+    },
+    {
+      "actual": 1249000.0,
+      "predicted": 395169.58
+    },
+    {
+      "actual": 400000.0,
+      "predicted": 578807.9
+    },
+    {
+      "actual": 80000.0,
+      "predicted": 80693.62
+    },
+    {
+      "actual": 165000.0,
+      "predicted": 330536.77
+    },
+    {
+      "actual": 330000.0,
+      "predicted": 240857.41
+    },
+    {
+      "actual": 170000.0,
+      "predicted": 127982.37
+    },
+    {
+      "actual": 210000.0,
+      "predicted": 224660.79
+    },
+    {
+      "actual": 1150000.0,
+      "predicted": 2376713.93
+    },
+    {
+      "actual": 850000.0,
+      "predicted": 576379.18
+    },
+    {
+      "actual": 345000.0,
+      "predicted": 331160.93
+    },
+    {
+      "actual": 310000.0,
+      "predicted": 218590.75
+    },
+    {
+      "actual": 850000.0,
+      "predicted": 694021.29
+    },
+    {
+      "actual": 390000.0,
+      "predicted": 478181.28
+    },
+    {
+      "actual": 310000.0,
+      "predicted": 271819.7
+    },
+    {
+      "actual": 600000.0,
+      "predicted": 529907.16
+    },
+    {
+      "actual": 1700000.0,
+      "predicted": 2051354.36
+    },
+    {
+      "actual": 390000.0,
+      "predicted": 204633.94
+    },
+    {
+      "actual": 1250000.0,
+      "predicted": 826563.01
+    },
+    {
+      "actual": 640000.0,
+      "predicted": 707624.03
+    },
+    {
+      "actual": 600000.0,
+      "predicted": 521396.29
+    },
+    {
+      "actual": 1025000.0,
+      "predicted": 474081.96
+    },
+    {
+      "actual": 45000.0,
+      "predicted": 107659.57
+    },
+    {
+      "actual": 750000.0,
+      "predicted": 718524.9
+    },
+    {
+      "actual": 500000.0,
+      "predicted": 381970.22
+    },
+    {
+      "actual": 290000.0,
+      "predicted": 343203.25
+    },
+    {
+      "actual": 275000.0,
+      "predicted": 260532.8
+    },
+    {
+      "actual": 800000.0,
+      "predicted": 863853.54
+    },
+    {
+      "actual": 760000.0,
+      "predicted": 684966.87
+    },
+    {
+      "actual": 100000.0,
+      "predicted": 113670.01
+    },
+    {
+      "actual": 450000.0,
+      "predicted": 354852.55
+    },
+    {
+      "actual": 500000.0,
+      "predicted": 370372.99
+    },
+    {
+      "actual": 175000.0,
+      "predicted": 212550.31
+    },
+    {
+      "actual": 400000.0,
+      "predicted": 867360.72
+    },
+    {
+      "actual": 250000.0,
+      "predicted": 219173.16
+    },
+    {
+      "actual": 470000.0,
+      "predicted": 449753.12
+    },
+    {
+      "actual": 138000.0,
+      "predicted": 266273.0
+    },
+    {
+      "actual": 114999.0,
+      "predicted": 210247.73
+    },
+    {
+      "actual": 100000.0,
+      "predicted": 139884.35
+    }
+  ],
+  "largest_overpredictions": [
+    {
+      "name": "Skoda Rapid 1.5 TDI AT Ambition BSIV",
+      "year": 2017,
+      "km_driven": 40000,
+      "actual": 750000.0,
+      "predicted": 2608226.07,
+      "residual": -1858226.07,
+      "absolute_error": 1858226.07,
+      "direction": "overprediction"
+    },
+    {
+      "name": "Kia Seltos HTK Plus AT D",
+      "year": 2019,
+      "km_driven": 10000,
+      "actual": 1300000.0,
+      "predicted": 2672730.25,
+      "residual": -1372730.25,
+      "absolute_error": 1372730.25,
+      "direction": "overprediction"
+    },
+    {
+      "name": "Mahindra XUV500 AT W6 2WD",
+      "year": 2017,
+      "km_driven": 40000,
+      "actual": 1300000.0,
+      "predicted": 2608226.07,
+      "residual": -1308226.07,
+      "absolute_error": 1308226.07,
+      "direction": "overprediction"
+    },
+    {
+      "name": "Audi Q3 2.0 TDI Quattro Premium Plus",
+      "year": 2014,
+      "km_driven": 110000,
+      "actual": 1150000.0,
+      "predicted": 2376713.93,
+      "residual": -1226713.93,
+      "absolute_error": 1226713.93,
+      "direction": "overprediction"
+    },
+    {
+      "name": "Volkswagen Vento 1.5 Highline Plus AT 16 Alloy",
+      "year": 2017,
+      "km_driven": 110000,
+      "actual": 710000.0,
+      "predicted": 1900675.87,
+      "residual": -1190675.87,
+      "absolute_error": 1190675.87,
+      "direction": "overprediction"
+    },
+    {
+      "name": "Hyundai Verna SX CRDi AT",
+      "year": 2012,
+      "km_driven": 70070,
+      "actual": 465000.0,
+      "predicted": 1442467.82,
+      "residual": -977467.82,
+      "absolute_error": 977467.82,
+      "direction": "overprediction"
+    },
+    {
+      "name": "Volkswagen Jetta 2.0L TDI Highline AT",
+      "year": 2012,
+      "km_driven": 55300,
+      "actual": 735000.0,
+      "predicted": 1689615.8,
+      "residual": -954615.8,
+      "absolute_error": 954615.8,
+      "direction": "overprediction"
+    },
+    {
+      "name": "Mercedes-Benz New C-Class 220 CDI AT",
+      "year": 2013,
+      "km_driven": 35000,
+      "actual": 1500000.0,
+      "predicted": 2234506.84,
+      "residual": -734506.84,
+      "absolute_error": 734506.84,
+      "direction": "overprediction"
+    }
+  ],
+  "largest_underpredictions": [
+    {
+      "name": "Mercedes-Benz S-Class S 350d Connoisseurs Edition",
+      "year": 2017,
+      "km_driven": 6500,
+      "actual": 8150000.0,
+      "predicted": 1679518.18,
+      "residual": 6470481.82,
+      "absolute_error": 6470481.82,
+      "direction": "underprediction"
+    },
+    {
+      "name": "Mercedes-Benz GLS 2016-2020 350d 4MATIC",
+      "year": 2016,
+      "km_driven": 77350,
+      "actual": 5500000.0,
+      "predicted": 1427275.3,
+      "residual": 4072724.7,
+      "absolute_error": 4072724.7,
+      "direction": "underprediction"
+    },
+    {
+      "name": "Mercedes-Benz E-Class Exclusive E 200 BSIV",
+      "year": 2018,
+      "km_driven": 9800,
+      "actual": 4500000.0,
+      "predicted": 681473.88,
+      "residual": 3818526.12,
+      "absolute_error": 3818526.12,
+      "direction": "underprediction"
+    },
+    {
+      "name": "Audi A4 30 TFSI Technology",
+      "year": 2018,
+      "km_driven": 22000,
+      "actual": 3100000.0,
+      "predicted": 549366.62,
+      "residual": 2550633.38,
+      "absolute_error": 2550633.38,
+      "direction": "underprediction"
+    },
+    {
+      "name": "BMW 5 Series 520d Luxury Line",
+      "year": 2018,
+      "km_driven": 9422,
+      "actual": 4800000.0,
+      "predicted": 2495550.66,
+      "residual": 2304449.34,
+      "absolute_error": 2304449.34,
+      "direction": "underprediction"
+    },
+    {
+      "name": "Mercedes-Benz C-Class Progressive C 220d",
+      "year": 2018,
+      "km_driven": 10000,
+      "actual": 3800000.0,
+      "predicted": 1857869.34,
+      "residual": 1942130.66,
+      "absolute_error": 1942130.66,
+      "direction": "underprediction"
+    },
+    {
+      "name": "Ford Endeavour Titanium Plus 4X4",
+      "year": 2017,
+      "km_driven": 60000,
+      "actual": 2650000.0,
+      "predicted": 1538769.84,
+      "residual": 1111230.16,
+      "absolute_error": 1111230.16,
+      "direction": "underprediction"
+    },
+    {
+      "name": "Toyota Fortuner 2.8 2WD AT BSIV",
+      "year": 2018,
+      "km_driven": 40000,
+      "actual": 2800000.0,
+      "predicted": 1811003.41,
+      "residual": 988996.59,
+      "absolute_error": 988996.59,
+      "direction": "underprediction"
+    }
+  ],
+  "largest_high_price_errors": [
+    {
+      "name": "Mercedes-Benz S-Class S 350d Connoisseurs Edition",
+      "year": 2017,
+      "km_driven": 6500,
+      "actual": 8150000.0,
+      "predicted": 1679518.18,
+      "residual": 6470481.82,
+      "absolute_error": 6470481.82,
+      "direction": "underprediction"
+    },
+    {
+      "name": "Mercedes-Benz GLS 2016-2020 350d 4MATIC",
+      "year": 2016,
+      "km_driven": 77350,
+      "actual": 5500000.0,
+      "predicted": 1427275.3,
+      "residual": 4072724.7,
+      "absolute_error": 4072724.7,
+      "direction": "underprediction"
+    },
+    {
+      "name": "Mercedes-Benz E-Class Exclusive E 200 BSIV",
+      "year": 2018,
+      "km_driven": 9800,
+      "actual": 4500000.0,
+      "predicted": 681473.88,
+      "residual": 3818526.12,
+      "absolute_error": 3818526.12,
+      "direction": "underprediction"
+    },
+    {
+      "name": "Audi A4 30 TFSI Technology",
+      "year": 2018,
+      "km_driven": 22000,
+      "actual": 3100000.0,
+      "predicted": 549366.62,
+      "residual": 2550633.38,
+      "absolute_error": 2550633.38,
+      "direction": "underprediction"
+    },
+    {
+      "name": "BMW 5 Series 520d Luxury Line",
+      "year": 2018,
+      "km_driven": 9422,
+      "actual": 4800000.0,
+      "predicted": 2495550.66,
+      "residual": 2304449.34,
+      "absolute_error": 2304449.34,
+      "direction": "underprediction"
+    },
+    {
+      "name": "Mercedes-Benz C-Class Progressive C 220d",
+      "year": 2018,
+      "km_driven": 10000,
+      "actual": 3800000.0,
+      "predicted": 1857869.34,
+      "residual": 1942130.66,
+      "absolute_error": 1942130.66,
+      "direction": "underprediction"
+    },
+    {
+      "name": "Kia Seltos HTK Plus AT D",
+      "year": 2019,
+      "km_driven": 10000,
+      "actual": 1300000.0,
+      "predicted": 2672730.25,
+      "residual": -1372730.25,
+      "absolute_error": 1372730.25,
+      "direction": "overprediction"
+    },
+    {
+      "name": "Mahindra XUV500 AT W6 2WD",
+      "year": 2017,
+      "km_driven": 40000,
+      "actual": 1300000.0,
+      "predicted": 2608226.07,
+      "residual": -1308226.07,
+      "absolute_error": 1308226.07,
+      "direction": "overprediction"
+    },
+    {
+      "name": "Audi Q3 2.0 TDI Quattro Premium Plus",
+      "year": 2014,
+      "km_driven": 110000,
+      "actual": 1150000.0,
+      "predicted": 2376713.93,
+      "residual": -1226713.93,
+      "absolute_error": 1226713.93,
+      "direction": "overprediction"
+    },
+    {
+      "name": "Ford Endeavour Titanium Plus 4X4",
+      "year": 2017,
+      "km_driven": 60000,
+      "actual": 2650000.0,
+      "predicted": 1538769.84,
+      "residual": 1111230.16,
+      "absolute_error": 1111230.16,
+      "direction": "underprediction"
+    },
+    {
+      "name": "Toyota Fortuner 2.8 2WD AT BSIV",
+      "year": 2018,
+      "km_driven": 40000,
+      "actual": 2800000.0,
+      "predicted": 1811003.41,
+      "residual": 988996.59,
+      "absolute_error": 988996.59,
+      "direction": "underprediction"
+    },
+    {
+      "name": "Toyota Innova Crysta 2.4 VX MT 8S BSIV",
+      "year": 2019,
+      "km_driven": 20000,
+      "actual": 1900000.0,
+      "predicted": 938509.29,
+      "residual": 961490.71,
+      "absolute_error": 961490.71,
+      "direction": "underprediction"
+    }
+  ],
+  "residual_diagnostics": {
+    "mean_actual_minus_predicted": 37596.54,
+    "median_actual_minus_predicted": 73.04,
+    "underprediction_rate": 0.5
+  },
+  "dataset": {
+    "rows": 3577,
+    "features": [
+      "name",
+      "year",
+      "km_driven",
+      "fuel",
+      "seller_type",
+      "transmission",
+      "owner"
+    ],
+    "median_price": 350000.0,
+    "mean_price": 473912.54,
+    "price_min": 20000.0,
+    "price_max": 8900000.0,
+    "missing_values": 0,
+    "top_fuels": {
+      "Diesel": 1800,
+      "Petrol": 1717,
+      "CNG": 37,
+      "LPG": 22,
+      "Electric": 1
+    },
+    "unique_names_training": 1306,
+    "names_seen_once_training": 747,
+    "names_seen_at_most_twice_training": 1017,
+    "high_price_rows_training": 219,
+    "high_price_unique_names_training": 162,
+    "high_price_names_seen_at_most_twice_training": 150,
+    "rare_name_examples": [
+      {
+        "name": "Volkswagen Polo 1.5 TDI Highline",
+        "training_count": 2
+      },
+      {
+        "name": "Tata Nano Cx BSIV",
+        "training_count": 2
+      },
+      {
+        "name": "Ford Figo Petrol Titanium",
+        "training_count": 2
+      },
+      {
+        "name": "Maruti Esteem Vxi",
+        "training_count": 2
+      },
+      {
+        "name": "Hyundai EON Magna",
+        "training_count": 2
+      },
+      {
+        "name": "Maruti Ciaz VDi Plus SHVS",
+        "training_count": 2
+      },
+      {
+        "name": "Skoda Superb 1.8 TFSI MT",
+        "training_count": 2
+      },
+      {
+        "name": "Mahindra KUV 100 G80 K2",
+        "training_count": 2
+      },
+      {
+        "name": "Ford Fiesta 1.5 TDCi Titanium",
+        "training_count": 2
+      },
+      {
+        "name": "Mahindra XUV500 W7 BSIV",
+        "training_count": 2
+      },
+      {
+        "name": "Datsun GO T BSIV",
+        "training_count": 2
+      },
+      {
+        "name": "Toyota Etios V",
+        "training_count": 2
+      },
+      {
+        "name": "Volkswagen Vento Petrol Highline AT",
+        "training_count": 2
+      },
+      {
+        "name": "Ford Figo 1.5P Titanium AT",
+        "training_count": 2
+      },
+      {
+        "name": "Chevrolet Beat Diesel",
+        "training_count": 2
+      }
+    ],
+    "rare_high_price_name_examples": [
+      {
+        "name": "Audi RS7 2015-2019 Sportback Performance",
+        "training_count": 1,
+        "median_price": 8900000.0
+      },
+      {
+        "name": "BMW X5 xDrive 30d xLine",
+        "training_count": 1,
+        "median_price": 4950000.0
+      },
+      {
+        "name": "Audi A5 Sportback",
+        "training_count": 1,
+        "median_price": 4700000.0
+      },
+      {
+        "name": "Volvo XC 90 D5 Inscription BSIV",
+        "training_count": 1,
+        "median_price": 4500000.0
+      },
+      {
+        "name": "Mercedes-Benz GL-Class 350 CDI Blue Efficiency",
+        "training_count": 1,
+        "median_price": 4400000.0
+      },
+      {
+        "name": "Land Rover Range Rover 4.4 Diesel LWB Vogue SE",
+        "training_count": 1,
+        "median_price": 4200000.0
+      },
+      {
+        "name": "Land Rover Discovery Sport TD4 HSE 7S",
+        "training_count": 1,
+        "median_price": 4000000.0
+      },
+      {
+        "name": "Land Rover Discovery S 2.0 SD4",
+        "training_count": 1,
+        "median_price": 4000000.0
+      },
+      {
+        "name": "BMW 7 Series Signature 730Ld",
+        "training_count": 1,
+        "median_price": 4000000.0
+      },
+      {
+        "name": "Land Rover Discovery Sport SD4 HSE Luxury",
+        "training_count": 1,
+        "median_price": 3500000.0
+      },
+      {
+        "name": "Audi A4 35 TDI Premium Plus",
+        "training_count": 1,
+        "median_price": 3256000.0
+      },
+      {
+        "name": "Toyota Fortuner 2.8 2WD AT BSIV",
+        "training_count": 1,
+        "median_price": 3200000.0
+      },
+      {
+        "name": "BMW 3 Series GT Luxury Line",
+        "training_count": 1,
+        "median_price": 3050000.0
+      },
+      {
+        "name": "Audi A8 4.2 TDI",
+        "training_count": 1,
+        "median_price": 2800000.0
+      },
+      {
+        "name": "Ford Endeavour 2.2 Titanium AT 4X2",
+        "training_count": 1,
+        "median_price": 2800000.0
+      }
+    ]
+  }
+}

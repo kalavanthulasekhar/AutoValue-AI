@@ -52,3 +52,6 @@ Desktop.ini
 *.suo
 *.user
 *.sw?
+
+# Trained machine learning models
+models/*.joblib
