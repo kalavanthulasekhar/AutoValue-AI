@@ -16,6 +16,7 @@ vehicles, and explore model evaluation results.
 - [Project structure](#project-structure)
 - [Requirements](#requirements)
 - [Run locally](#run-locally)
+- [Deploy to Render](#deploy-to-render)
 - [API](#api)
 - [Model and evaluation](#model-and-evaluation)
 - [Tests](#tests)
@@ -137,6 +138,51 @@ npm run dev
 Open the local URL printed by Vite, usually `http://localhost:5173`. Keep both
 development servers running while using the app. Vite forwards frontend
 requests from `/api/*` to the Flask server and removes the `/api` prefix.
+
+## Deploy to Render
+
+Deploy the backend as a **Web Service** and the frontend as a **Static Site**.
+Both services use the same GitHub repository and the `main` branch.
+
+### 1. Deploy the backend
+
+Create a Render Web Service with these settings:
+
+| Setting | Value |
+| --- | --- |
+| Root Directory | Leave blank (repository root) |
+| Build Command | `pip install -r backend/requirements.txt` |
+| Start Command | `gunicorn backend.app:app --bind 0.0.0.0:$PORT` |
+| Health Check Path | `/health` |
+
+After deployment, open `https://<your-backend-service>.onrender.com/health`.
+Confirm the response reports `"model_loaded": true`. The prediction model at
+`models/car_price_pipeline.joblib` must be available in the repository.
+
+### 2. Deploy the frontend
+
+Create a Render Static Site from the same repository:
+
+| Setting | Value |
+| --- | --- |
+| Root Directory | `frontend` |
+| Build Command | `npm ci && npm run build` |
+| Publish Directory | `dist` |
+
+Add this environment variable to the static site:
+
+| Variable | Value |
+| --- | --- |
+| `VITE_API_URL` | `https://<your-backend-service>.onrender.com` |
+
+Use your actual backend service URL, with no trailing slash. Vite embeds this
+variable during the frontend build, so save it and redeploy the static site
+after adding or changing it. The frontend uses this URL for `/predict` and
+`/evaluation`. If `VITE_API_URL` is unset, local development continues to use
+Vite's `/api` proxy.
+
+Once both services are deployed, open the static-site URL, confirm evaluation
+data loads, and submit a prediction to verify frontend-to-backend requests.
 
 ### Optional: install notebook and analysis dependencies
 

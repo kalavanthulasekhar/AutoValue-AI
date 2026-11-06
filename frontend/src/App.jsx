@@ -13,6 +13,9 @@ const initialForm = {
 
 const currentYear = new Date().getFullYear();
 const HISTORY_KEY = "autovalue_prediction_history";
+const API_BASE_URL = (import.meta.env.VITE_API_URL || "").replace(/\/+$/, "");
+const API_PREFIX = API_BASE_URL ? "" : "/api";
+const apiUrl = (endpoint) => `${API_BASE_URL}${API_PREFIX}/${endpoint}`;
 
 const formatINR = (value) =>
   new Intl.NumberFormat("en-IN", {
@@ -83,7 +86,7 @@ export default function App() {
   const [historyFilter, setHistoryFilter] = useState("");
 
   useEffect(() => {
-    fetch("/api/evaluation")
+    fetch(apiUrl("evaluation"))
       .then(async (response) => {
         const data = await response.json().catch(() => ({}));
         if (!response.ok) throw new Error(data.error || "Evaluation unavailable.");
@@ -210,7 +213,7 @@ export default function App() {
     setLoading(true);
 
     try {
-      const response = await fetch("/api/predict", {
+      const response = await fetch(apiUrl("predict"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
