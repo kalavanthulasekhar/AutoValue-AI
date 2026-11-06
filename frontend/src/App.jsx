@@ -366,7 +366,7 @@ export default function App() {
 
   <img
     className="hero-car-image"
-    src="/car-hero.png"
+    src="/car-hero.webp"
     alt="Silver futuristic sports car with blue lighting"
   />
 
