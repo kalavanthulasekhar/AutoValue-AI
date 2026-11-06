@@ -1,18 +1,26 @@
-# Car Price Predictor
+# AutoValue AI — Used-Car Price Predictor
 
-**AutoValue AI** is a machine-learning web application for estimating used-car
-selling prices. Users enter vehicle specifications to receive an estimate in
-Indian Rupees (INR), review estimates saved in their browser, compare saved
-vehicles, and explore model evaluation results.
+Estimate used-car selling prices with a machine-learning model. Enter a
+vehicle's specifications to get an indicative price in Indian Rupees (INR),
+compare saved vehicles, and explore model evaluation results.
 
-> **Academic project:** B.Tech Minor Project, Department of Computer Science
-> and Engineering, Sanskriti University, Mathura (Academic Session 2023–2027).
+<p align="center">
+  <a href="https://autovalue-ai-1-h85d.onrender.com"><strong>Open the live app</strong></a>
+  &nbsp;·&nbsp;
+  <a href="https://autovalue-ai-e6k0.onrender.com">Backend API</a>
+  &nbsp;·&nbsp;
+  <a href="https://autovalue-ai-e6k0.onrender.com/health">API health</a>
+</p>
+
+> **Estimate only:** Results are model predictions, not guaranteed sale prices,
+> appraisals, or financial advice.
 
 ## Contents
 
 - [Features](#features)
 - [Technology](#technology)
 - [How it works](#how-it-works)
+- [Live deployment](#live-deployment)
 - [Project structure](#project-structure)
 - [Requirements](#requirements)
 - [Run locally](#run-locally)
@@ -22,6 +30,17 @@ vehicles, and explore model evaluation results.
 - [Tests](#tests)
 - [Limitations](#limitations)
 - [Academic project](#academic-project)
+
+## Live deployment
+
+| Service | URL |
+| --- | --- |
+| Web application | [autovalue-ai-1-h85d.onrender.com](https://autovalue-ai-1-h85d.onrender.com) |
+| Backend API | [autovalue-ai-e6k0.onrender.com](https://autovalue-ai-e6k0.onrender.com) |
+| Backend health | [/health](https://autovalue-ai-e6k0.onrender.com/health) |
+
+The health endpoint should report `"status": "healthy"` and
+`"model_loaded": true` when the prediction service is ready.
 
 ## Features
 
@@ -44,17 +63,17 @@ vehicles, and explore model evaluation results.
 | Backend | Python, Flask, Flask-CORS |
 | Machine learning | pandas, NumPy, scikit-learn, joblib |
 | Data and notebooks | Jupyter, matplotlib, seaborn |
+| Deployment | Render |
 
 ## How it works
 
-1. The React application collects and validates the vehicle details.
-2. The frontend sends a JSON request to the Flask API through Vite's `/api`
-   development proxy.
-3. Flask validates the request and passes the input to the saved
-   scikit-learn pipeline.
-4. The API returns the estimated price and model information.
-5. The frontend displays the estimate and, on this browser, saves it to
-   prediction history.
+1. The React application collects and validates vehicle details.
+2. The frontend sends a JSON request to the Flask API. In local development,
+   Vite proxies `/api` requests; in production, the frontend uses `VITE_API_URL`.
+3. Flask validates the request and passes it to the saved scikit-learn pipeline.
+4. The API returns an estimated price and model information.
+5. The frontend displays the estimate and saves successful predictions in the
+   current browser.
 
 The production pipeline is the **Log-target Extra Trees** model stored in
 `models/car_price_pipeline.joblib`.
@@ -76,6 +95,7 @@ Car-Price-Predictor/
 │       └── car_price_cleaned.csv
 ├── frontend/
 │   ├── public/
+│   │   └── car-hero.webp
 │   ├── src/
 │   ├── package.json
 │   └── vite.config.js
@@ -88,9 +108,9 @@ Car-Price-Predictor/
 └── README.md
 ```
 
-The data and model artifacts listed above are present in the development
-workspace. If you distribute the project, check dataset and model artifact
-redistribution permissions and include any required source attribution.
+The model and evaluation artifacts are included in the repository. If you
+redistribute the dataset or model, check their applicable permissions and
+include any required source attribution.
 
 ## Requirements
 
@@ -100,7 +120,8 @@ redistribution permissions and include any required source attribution.
 
 ## Run locally
 
-Run the backend and frontend in separate terminals from the project root.
+Run the backend and frontend in separate terminals. The commands below assume
+you start in the repository root.
 
 ### 1. Set up and start the backend
 
@@ -121,8 +142,8 @@ python backend\app.py
 
 The API listens at `http://127.0.0.1:5000`.
 
-For macOS or Linux, activate the environment with
-`source .venv/bin/activate`. The backend requirements can be installed with
+On macOS or Linux, activate the virtual environment with
+`source .venv/bin/activate`; install dependencies with
 `python -m pip install -r backend/requirements.txt`.
 
 ### 2. Set up and start the frontend
@@ -141,8 +162,13 @@ requests from `/api/*` to the Flask server and removes the `/api` prefix.
 
 ## Deploy to Render
 
-Deploy the backend as a **Web Service** and the frontend as a **Static Site**.
-Both services use the same GitHub repository and the `main` branch.
+The live app is deployed as two Render services from the `main` branch:
+
+- **Backend Web Service:** [autovalue-ai-e6k0.onrender.com](https://autovalue-ai-e6k0.onrender.com)
+- **Frontend Static Site:** [autovalue-ai-1-h85d.onrender.com](https://autovalue-ai-1-h85d.onrender.com)
+
+To create or redeploy the services, connect the GitHub repository and use the
+following settings.
 
 ### 1. Deploy the backend
 
@@ -155,9 +181,9 @@ Create a Render Web Service with these settings:
 | Start Command | `gunicorn backend.app:app --bind 0.0.0.0:$PORT` |
 | Health Check Path | `/health` |
 
-After deployment, open `https://<your-backend-service>.onrender.com/health`.
-Confirm the response reports `"model_loaded": true`. The prediction model at
-`models/car_price_pipeline.joblib` must be available in the repository.
+After deployment, open the backend's `/health` endpoint. Confirm the response
+reports `"model_loaded": true`. The model at
+`models/car_price_pipeline.joblib` must be available to the backend.
 
 ### 2. Deploy the frontend
 
@@ -173,13 +199,13 @@ Add this environment variable to the static site:
 
 | Variable | Value |
 | --- | --- |
-| `VITE_API_URL` | `https://<your-backend-service>.onrender.com` |
+| `VITE_API_URL` | `https://autovalue-ai-e6k0.onrender.com` |
 
-Use your actual backend service URL, with no trailing slash. Vite embeds this
-variable during the frontend build, so save it and redeploy the static site
-after adding or changing it. The frontend uses this URL for `/predict` and
-`/evaluation`. If `VITE_API_URL` is unset, local development continues to use
-Vite's `/api` proxy.
+Set the value to the backend base URL with no trailing slash. Vite embeds this
+variable during the frontend build, so redeploy the static site after adding or
+changing it. The frontend uses this URL for `/predict` and `/evaluation`. If
+`VITE_API_URL` is unset, local development continues to use Vite's `/api`
+proxy.
 
 Once both services are deployed, open the static-site URL, confirm evaluation
 data loads, and submit a prediction to verify frontend-to-backend requests.
